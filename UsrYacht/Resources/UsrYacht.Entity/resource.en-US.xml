@@ -11,8 +11,9 @@
 			<Item Name="Columns.UsrManager.Caption" Value="Manager" />
 			<Item Name="Columns.UsrName.Caption" Value="Name" />
 			<Item Name="Columns.UsrPassengersCount.Caption" Value="Passengers count" />
-			<Item Name="Columns.UsrPricePerDay.Caption" Value="Price per day, USD" />
+			<Item Name="Columns.UsrPricePerDay.Caption" Value="Price per day, EUR" />
 			<Item Name="Columns.UsrStatus.Caption" Value="Status" />
+			<Item Name="Columns.UsrTicketPrice.Caption" Value="Ticket price, EUR" />
 		</Items>
 	</Group>
 </Resources>

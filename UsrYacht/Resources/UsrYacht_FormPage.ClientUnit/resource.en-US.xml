@@ -7,7 +7,15 @@
 			<Item Name="LocalizableStrings.addRecord_d7glot1_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_dzq2zem_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_y7ba71b_caption.Value" Value="Add new" />
-			<Item Name="Parameters.50711aa7-8f78-900c-d1aa-d8584962ca05.Caption" Value="TestPrice" />
+			<Item Name="LocalizableStrings.ExpansionPanel_5sjbkvi_title.Value" Value="Yacht rental" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_tlmwuvi_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_980zq5g_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_czl18nc_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_xhw5qc7_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_ceprci6_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_x9k8fzy_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.LengthCannotBeLess.Value" Value="Length cannot be less than 4 m" />
+			<Item Name="LocalizableStrings.PricePerDayCannotBeLess.Value" Value="Price cannot be less than 100.00 EUR" />
 		</Items>
 	</Group>
 </Resources>

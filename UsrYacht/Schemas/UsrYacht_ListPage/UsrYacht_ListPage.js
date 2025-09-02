@@ -17,7 +17,6 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				"operation": "merge",
 				"name": "FolderTree",
 				"values": {
-					"sourceSchemaName": "FolderTree",
 					"rootSchemaName": "UsrYacht"
 				}
 			},
@@ -33,17 +32,53 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"dataValueType": 1
 						},
 						{
-							"id": "c8689d78-80ba-4e71-8cf2-fa478e3be5bc",
+							"id": "3715a660-f64f-77b7-dcae-0ba38e26e296",
+							"code": "PDS_UsrDriveType",
+							"caption": "#ResourceString(PDS_UsrDriveType)#",
+							"dataValueType": 10
+						},
+						{
+							"id": "b016b574-24e0-3394-bb9e-5238ba9157fa",
+							"code": "PDS_UsrStatus",
+							"caption": "#ResourceString(PDS_UsrStatus)#",
+							"dataValueType": 10
+						},
+						{
+							"id": "f36a3405-3fc1-143d-ee74-b07cce36504c",
+							"code": "PDS_UsrPricePerDay",
+							"caption": "#ResourceString(PDS_UsrPricePerDay)#",
+							"dataValueType": 32
+						},
+						{
+							"id": "d735f7b5-40de-78dd-44aa-f92a41caf3ea",
+							"code": "PDS_UsrLength",
+							"caption": "#ResourceString(PDS_UsrLength)#",
+							"dataValueType": 4
+						},
+						{
+							"id": "49a6b91c-f171-9e54-3767-34ef519b4cf6",
+							"code": "PDS_UsrPassengersCount",
+							"caption": "#ResourceString(PDS_UsrPassengersCount)#",
+							"dataValueType": 4
+						},
+						{
+							"id": "07691759-a605-b273-a20e-42534b2e3cdb",
+							"code": "PDS_UsrCrewCount",
+							"caption": "#ResourceString(PDS_UsrCrewCount)#",
+							"dataValueType": 4
+						},
+						{
+							"id": "1da63544-6ced-4157-451e-b6b2ef4d7606",
+							"code": "PDS_UsrCaptain",
+							"caption": "#ResourceString(PDS_UsrCaptain)#",
+							"dataValueType": 10
+						},
+						{
+							"id": "cdc48de1-1e85-7f71-d606-fe62135a04b3",
 							"code": "PDS_CreatedOn",
 							"caption": "#ResourceString(PDS_CreatedOn)#",
 							"dataValueType": 7
-						},
-						{
-							"id": "fd4b3485-a46e-4219-b775-adef1210fe51",
-							"code": "PDS_CreatedBy",
-							"caption": "#ResourceString(PDS_CreatedBy)#",
-							"dataValueType": 10
-						},
+						}
 					]
 				}
 			},
@@ -79,14 +114,44 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"path": "PDS.UsrName"
 						}
 					},
+					"PDS_UsrDriveType": {
+						"modelConfig": {
+							"path": "PDS.UsrDriveType"
+						}
+					},
+					"PDS_UsrStatus": {
+						"modelConfig": {
+							"path": "PDS.UsrStatus"
+						}
+					},
+					"PDS_UsrPricePerDay": {
+						"modelConfig": {
+							"path": "PDS.UsrPricePerDay"
+						}
+					},
+					"PDS_UsrLength": {
+						"modelConfig": {
+							"path": "PDS.UsrLength"
+						}
+					},
+					"PDS_UsrPassengersCount": {
+						"modelConfig": {
+							"path": "PDS.UsrPassengersCount"
+						}
+					},
+					"PDS_UsrCrewCount": {
+						"modelConfig": {
+							"path": "PDS.UsrCrewCount"
+						}
+					},
+					"PDS_UsrCaptain": {
+						"modelConfig": {
+							"path": "PDS.UsrCaptain"
+						}
+					},
 					"PDS_CreatedOn": {
 						"modelConfig": {
 							"path": "PDS.CreatedOn"
-						}
-					},
-					"PDS_CreatedBy": {
-						"modelConfig": {
-							"path": "PDS.CreatedBy"
 						}
 					}
 				}
@@ -101,7 +166,36 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"config"
 				],
 				"values": {
-					"entitySchemaName": "UsrYacht"
+					"entitySchemaName": "UsrYacht",
+					"attributes": {
+						"UsrName": {
+							"path": "UsrName"
+						},
+						"UsrDriveType": {
+							"path": "UsrDriveType"
+						},
+						"UsrStatus": {
+							"path": "UsrStatus"
+						},
+						"UsrPricePerDay": {
+							"path": "UsrPricePerDay"
+						},
+						"UsrLength": {
+							"path": "UsrLength"
+						},
+						"UsrPassengersCount": {
+							"path": "UsrPassengersCount"
+						},
+						"UsrCrewCount": {
+							"path": "UsrCrewCount"
+						},
+						"UsrCaptain": {
+							"path": "UsrCaptain"
+						},
+						"CreatedOn": {
+							"path": "CreatedOn"
+						}
+					}
 				}
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
