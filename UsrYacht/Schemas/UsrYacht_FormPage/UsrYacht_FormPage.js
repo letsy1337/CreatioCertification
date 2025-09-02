@@ -425,6 +425,62 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 			},
 			{
 				"operation": "insert",
+				"name": "AddRentals",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(AddRentals_caption)#",
+					"color": "default",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "only-icon",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrAddRentalsForThreeWeeks",
+							"processRunType": "ForTheSelectedPage",
+							"saveAtProcessStart": true,
+							"showNotification": true,
+							"recordIdProcessParameterName": "YachtIdParamentr"
+						}
+					},
+					"clickMode": "default",
+					"icon": "folder-plus-icon"
+				},
+				"parentName": "FlexContainer_r81mnct",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "UpdateTotalPrices",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(UpdateTotalPrices_caption)#",
+					"color": "default",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "only-icon",
+					"visible": true,
+					"icon": "disk-warn-button-icon",
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrSetRentalPrice",
+							"processRunType": "ForTheSelectedPage",
+							"saveAtProcessStart": true,
+							"showNotification": true,
+							"recordIdProcessParameterName": "YachtId"
+						}
+					},
+					"clickMode": "default"
+				},
+				"parentName": "FlexContainer_r81mnct",
+				"propertyName": "items",
+				"index": 2
+			},
+			{
+				"operation": "insert",
 				"name": "GridDetailRefreshBtn_xhw5qc7",
 				"values": {
 					"type": "crt.Button",
@@ -445,7 +501,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 				},
 				"parentName": "FlexContainer_r81mnct",
 				"propertyName": "items",
-				"index": 1
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -458,11 +514,12 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 					"color": "default",
 					"size": "medium",
 					"clickMode": "menu",
-					"menuItems": []
+					"menuItems": [],
+					"visible": true
 				},
 				"parentName": "FlexContainer_r81mnct",
 				"propertyName": "items",
-				"index": 2
+				"index": 4
 			},
 			{
 				"operation": "insert",
@@ -533,7 +590,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 				},
 				"parentName": "FlexContainer_r81mnct",
 				"propertyName": "items",
-				"index": 3
+				"index": 5
 			},
 			{
 				"operation": "insert",
@@ -567,7 +624,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 						"colSpan": 2,
 						"column": 1,
 						"row": 1,
-						"rowSpan": 6
+						"rowSpan": 11
 					},
 					"features": {
 						"rows": {
@@ -861,25 +918,27 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 							request.$context.disableAttributeValidator('PDS_UsrComment_fnmqhg1', 'required');
 						}
 		            }
-		            /* Call the next handler if it exists and return its result. */
-		            return next?.handle(request);
-		        }
-		    },
-			{
-				request: "crt.HandleViewModelAttributeChangeRequest",
-				/* The custom implementation of the system query handler. */
-				handler: async (request, next) => {
-      				if (request.attributeName === 'PDS_UsrPricePerDay_19mqech' || 		       
+					if (request.attributeName === 'PDS_UsrPricePerDay_19mqech' || 		       
 					   request.attributeName === 'PDS_UsrPassengersCount_ci664gv' ) { 		
 						var price = await request.$context.PDS_UsrPricePerDay_19mqech;
 						var passengers = await request.$context.PDS_UsrPassengersCount_ci664gv;
 						var ticket_price = price / passengers;
 						request.$context.PDS_UsrTicketPrice_wuupxgb = ticket_price;
 					}
-					/* Call the next handler if it exists and return its result. */
-					return next?.handle(request);
-				}
-			}
+					if (request.attributeName === 'GridDetail_eat7ijuDS_UsrRentalStartDate' || 		       
+					   request.attributeName === 'GridDetail_eat7ijuDS_UsrRentalEndDate' ||
+					   request.attributeName === 'PDS_UsrPricePerDay_19mqech') { 		
+						var price = await request.$context.PDS_UsrPricePerDay_19mqech;
+						var start_date = await request.$context.GridDetail_eat7ijuDS_UsrRentalStartDate;
+						var end_date = await request.$context.GridDetail_eat7ijuDS_UsrRentalEndDate;
+						var diffDays = Math.ceil((end_date - start_date) / (1000 * 60 * 60 * 24));
+						var total_price = diffDays * price;
+						request.$context.GridDetail_eat7ijuDS_UsrTotalPrice = ticket_price;
+					} 
+		            /* Call the next handler if it exists and return its result. */
+		            return next?.handle(request);
+		        }
+		    }
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
 		validators: /**SCHEMA_VALIDATORS*/{

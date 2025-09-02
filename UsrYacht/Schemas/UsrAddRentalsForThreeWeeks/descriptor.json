@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "ba40d5b2-fefb-4218-b173-468a25af91e8",
+    "Name": "UsrAddRentalsForThreeWeeks",
+    "ModifiedOnUtc": "\/Date(1756838659000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Add rentals for 3 weeks",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "9d65715a-8acf-48a1-941a-6ac85aca6c90",
+    "Name": "UsrSetRentalPrice",
+    "ModifiedOnUtc": "\/Date(1756837359000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Set total rent price",
+    "DependsOn": []
+  }
+}
